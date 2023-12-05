@@ -3,6 +3,16 @@ import React, {useState} from "react";
 
 function Card(){
     var [counter, incrementC]=useState(0);
+    var doIncrement = () => {
+        //Change if valueChange <50
+        if (counter <= 49 ){
+            incrementC(++counter);
+        }
+        else{
+            alert("Value is greater than 50");
+            counter=0;
+        }
+    }
     return(
         <>
             <center className="card1">
@@ -16,7 +26,7 @@ function Card(){
                         </i>
                     </p>
                 </div>
-                <button onClick={()=> incrementC(++counter)}>Increment Now</button>
+                <button onClick={doIncrement }>Increment Now</button>
             </center>
         </>
     )
